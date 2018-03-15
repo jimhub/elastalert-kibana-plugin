@@ -1,5 +1,6 @@
 import chrome from 'ui/chrome';
 import routes from 'ui/routes';
+import 'ui/autoload/styles';
 import html from './index.html';
 import './root_controller';
 import './less/app.less';
@@ -18,16 +19,5 @@ routes.otherwise({
 });
 
 chrome
-  .setBrand({
-    logo: 'url(/plugins/elastalert/img/elastalert-logo-kibana.png) center no-repeat'
-  })
-  .setNavBackground('#212121')
-  .addApplicationClass('elastalert-app')
-  .setTabDefaults({
-    resetWhenActive: true,
-    lastUrlStore: window.sessionStore,
-    activeIndicatorColor: '#D14F4E'
-  })
-  .setTabs(tabs)
   .setRootTemplate(html)
   .setRootController('elastalert', 'elastalertRootController');

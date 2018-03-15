@@ -3,7 +3,7 @@ import ElastalertPluginServer from './server';
 
 export default function (kibana) {
   return new kibana.Plugin({
-    id: 'elastalert',
+    require: ['elasticsearch'],
     uiExports: {
       app: {
         title: 'ElastAlert',

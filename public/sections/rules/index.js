@@ -1,4 +1,4 @@
-import modules from 'ui/modules';
+import { uiModules as modules } from 'ui/modules';
 import routes from 'ui/routes';
 import html from './rules.html';
 import './rules.less';

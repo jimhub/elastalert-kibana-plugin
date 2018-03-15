@@ -1,4 +1,5 @@
-import modules from 'ui/modules';
+import chrome from 'ui/chrome';
+import { uiModules as modules } from 'ui/modules';
 import path from 'path';
 
 modules
@@ -6,7 +7,7 @@ modules
   .service('api', function ($http) {
     return function (request) {
       if (request && request.url) {
-        request.url = path.join('/api/elastalert', request.url);
+        request.url = chrome.addBasePath(path.join('/api/elastalert', request.url));
       }
 
       return $http(request);
